@@ -1,0 +1,43 @@
+body {
+	background-color: darkgray;
+}
+
+#BotoneArriba {
+	background-image:url('../img/FlechaArriba.png');
+	background-repeat:no-repeat;
+  	height:79px;
+  	width:65px;
+  	background-position:center;
+  	background-size: cover;
+}
+
+#BotoneAbajo {
+	background-image:url('../img/FlechaAbajo.png');
+	background-repeat:no-repeat;
+  	height:79px;
+  	width:65px;
+  	background-position:center;
+  	background-size: cover;
+}
+
+#BotoneIzquierda {
+	background-image:url('../img/FlechaIzquierda.png');
+	background-repeat:no-repeat;
+  	height:65px;
+  	width:79px;
+  	background-position:center;
+  	background-size: cover;
+}
+
+#BotoneDerecha {
+	background-image:url('../img/FlechaDerecha.png');
+	background-repeat:no-repeat;
+  	height:65px;
+  	width:79px;
+  	background-position:center;
+  	background-size: cover;
+}
+
+#tdCentro{
+    width: 1px;
+}

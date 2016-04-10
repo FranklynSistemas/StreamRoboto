@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="js/socket.js"></script>
+  <script src="js/angular.js"></script>
+  <script src="angular-socket-io/socket.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/controller.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Robotin</title>
+</head>
+<body>
+  
+<br>
+  <center><img id='miImg' width='50%' height='50%'></center>
+  <script src="http://192.168.1.5:3000/socket.io/socket.io.js"></script>
+  <script>
+    var websocket = io.connect("http://192.168.1.5:3000");
+    websocket.on('setFrame',proc);
+    function proc(img)
+    {
+      document.querySelector('#miImg').src = img;
+    };
+  </script>
+
+   <center> <h1>{{"Robotin"}}</h1></center>
+  <div ng-controller="ArduController">
+
+<br>
+<center>
+    <div>
+        <table  style="width:10%; height:10%">
+          <tr>
+              <td></td>
+              <td><button id='BotoneArriba' my-touchstart="Adelante()" my-touchend="SinMovimiento()" class="btn btn-info" name="boton"></button></td> 
+              <td id="tdCentro"></td>
+        </tr>
+        <tr>
+              <td><button id="BotoneIzquierda" my-touchstart="Izquierda()" my-touchend="SinMovimiento()" class="btn btn-info" name="boton"></button></td>
+              <td id="tdCentro"></td> 
+              <td><button id="BotoneDerecha" my-touchstart="Derecha()" my-touchend="SinMovimiento()" class="btn btn-info" name="boton"></button></td>
+        </tr>
+        <tr>
+              <td id="tdCentro"></td>
+              <td><button id="BotoneAbajo" my-touchstart="Atras()" my-touchend="SinMovimiento()" class="btn btn-info" name="boton"></button></td> 
+              <td id="tdCentro"></td>
+        </tr>
+        </table>
+    </div>
+</center>
+</div>
+</body>
+</html>
+
+
