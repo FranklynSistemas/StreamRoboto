@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
 	<head>
-<script src="http://192.168.1.5:3000/socket.io/socket.io.js"></script>
+<script src="/socket.io/socket.io.js"></script>
 <style>
     video{display: none;}
   </style>
@@ -13,7 +13,7 @@
 <div id='info'></div>
 </body>
 <script>
-var websocket = io.connect("http://192.168.1.5:3000");
+var websocket = io.connect();
 window.URL = window.URL || window.webkitURL;
 /*
 navigator.getUserMedia = ( navigator.getUserMedia ||

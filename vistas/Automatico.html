@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="js/socket.js"></script>
+  <script src="js/angular.js"></script>
+  <script src="angular-socket-io/socket.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/controller.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Robotin</title>
+</head>
+<body ng-controller="AutController">
+<br>
+   <center> <h1>Modo Automático</h1></center>
+  <div >
+<br>
+<center>
+<h4>En este modo usted debe indicar algunos parámetros como distancia y tiempo de exploración, con lo que el robot realizara el recorrido del cuadrante que corresponda a los parámetros dados</h4>
+    <div>
+    <h3 ng-if="boton">Tiempo: <input id="Tiempo" type="number" ng-model="tiempo" ng-disabled="true"></h3>
+    <form novalidate>
+    <div class="form-group">
+      <label for="dist">Distancia:</label>
+      <input type="number" ng-model="data.Distancia" ng-disabled="boton" class="form-control" id="dist" min=1 max=100 placeholder="Metros <= 100">
+    </div>
+    <div class="form-group">
+      <label for="time">Tiempo:</label>
+      <input type="number" ng-model="data.Tiempo" ng-disabled="boton" class="form-control" id="time" min=1 max=90 placeholder="Minutos <= 90">
+    </div>
+    <a type="button" ng-if="!boton" class="btn btn-success" ng-click="Iniciar(data)">Iniciar</a>
+    <a type="button" ng-if="boton" class="btn btn-success" ng-click="Detener(data)">Detener</a>
+    </form>
+    <a type="button" class="btn btn-positive " href="/">Atrás</a><br>
+    </div>
+</center>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/socket.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/scriptVoz.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styleVoz.css">
+  <title>Robotin</title>
+</head>
+<body>
+<br>
+  <center><div><img id='miImg1' width='50%' height='50%'></div></center>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var websocket = io.connect();
+    websocket.on('setFrame',proc);
+    function proc(img)
+    {
+      document.querySelector('#miImg1').src = img;
+    };
+  </script>
+  <div id="Center">
+     <h1>Control por voz</h1>
+  </div>   
+  <div id="divMic">
+    <div id="mic"></div>
+     <!-- <img id="mic" src='img/mic.png'>-->
+  </div>
+  <div id="direccion"></div>
+   
+
+</body>
+</html>
+
+

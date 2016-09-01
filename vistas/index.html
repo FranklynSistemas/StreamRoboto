@@ -17,41 +17,18 @@
 <body>
   
 <br>
-  <center><img id='miImg' width='50%' height='50%'></center>
-  <script src="http://192.168.1.5:3000/socket.io/socket.io.js"></script>
-  <script>
-    var websocket = io.connect("http://192.168.1.5:3000");
-    websocket.on('setFrame',proc);
-    function proc(img)
-    {
-      document.querySelector('#miImg').src = img;
-    };
-  </script>
-
-   <center> <h1>{{"Robotin"}}</h1></center>
-  <div ng-controller="ArduController">
-
+   <center> <h1>Menú de opciones</h1></center>
+  <div ng-controller="indexController">
 <br>
 <center>
     <div>
-        <table  style="width:10%; height:10%">
-          <tr>
-              <td></td>
-              <td><button id='BotoneArriba' my-touchstart="Adelante()" my-touchend="SinMovimiento()" class="btn btn-info" name="boton"></button></td> 
-              <td id="tdCentro"></td>
-        </tr>
-        <tr>
-              <td><button id="BotoneIzquierda" my-touchstart="Izquierda()" my-touchend="SinMovimiento()" class="btn btn-info" name="boton"></button></td>
-              <td id="tdCentro"></td> 
-              <td><button id="BotoneDerecha" my-touchstart="Derecha()" my-touchend="SinMovimiento()" class="btn btn-info" name="boton"></button></td>
-        </tr>
-        <tr>
-              <td id="tdCentro"></td>
-              <td><button id="BotoneAbajo" my-touchstart="Atras()" my-touchend="SinMovimiento()" class="btn btn-info" name="boton"></button></td> 
-              <td id="tdCentro"></td>
-        </tr>
-        </table>
+    <!--<button id='ControlManual'  ng-click="" class="btn btn-info" name="boton"></button>-->
+    <a type="button" class="btn btn-positive btn-lg" href="/manual">Control Manual</a><br>
+    <a type="button" class="btn btn-primary btn-lg" href="/vr">Control CardBoard</a><br>
+    <a type="button" class="btn btn-success btn-lg" href="/auto">Automático</a><br>
+    <a type="button" class="btn btn-info btn-lg" href="/video">Video</a><br>
     </div>
+    <h3>Vehículo de exploración, controlado por WIFI para el apoyo de tareas de desminado del ejército nacional de Colombia</h3>
 </center>
 </div>
 </body>
